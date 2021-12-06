@@ -14,7 +14,7 @@ env = UnityPy.load(src)
 for obj in env.objects:
     if obj.container == "assets/pml/data/wazatable.asset":
         tree = obj.read_typetree()
-
+        print(tree)
         with open('import/MonoBehaviour/WazaTable.json', "rt", encoding="utf8") as f:
             data = json.load(f)
         obj.save_typetree(data)
@@ -49,8 +49,7 @@ for obj in env.objects:
     if obj.container == "assets/pml/data/stonestatueeffect.asset":
         print(obj.container)
 
-with open('readme3.txt', 'w') as f:
-    f.write('readme')
 
-with open("Resources/personal_masterdatas", "wb") as t:
+
+with open("output/personal_masterdatas", "wb") as t:
     t.write(env.file.save(packer=(64, 2)))
