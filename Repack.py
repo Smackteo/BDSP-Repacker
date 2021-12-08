@@ -6,17 +6,15 @@ import json
 #2.0
 
 src = "Resources/personal_masterdatas"
-
 directory = r'import'
 env = UnityPy.load(src)
-
 for filename in os.listdir(directory):
     checkfile = os.path.splitext(filename)[0]
-    checkfile=checkfile.lower()
+    checkfile2 = checkfile.lower()
     for obj in env.objects:
-        if obj.container == "assets/pml/data/{}.asset".format(checkfile):
+        if obj.container == "assets/pml/data/{}.asset".format(checkfile2):
             tree = obj.read_typetree()
-            with open('import/{}.json'.format(checkfile), "rt", encoding="utf8") as f:
+            with open('import/{}'.format(filename), "rt", encoding="utf8") as f:
                 data = json.load(f)
             print('{} updated'.format(checkfile))
             obj.save_typetree(data)
@@ -24,5 +22,25 @@ for filename in os.listdir(directory):
 
 with open("output/personal_masterdatas", "wb") as t:
     t.write(env.file.save(packer=(64, 2)))
+
+
+src = "Resources/masterdatas"
+directory = r'import'
+env = UnityPy.load(src)
+for filename in os.listdir(directory):
+    checkfile = os.path.splitext(filename)[0]
+    checkfile2 = checkfile.lower()
+    for obj in env.objects:
+        if obj.container == "assets/md/placedata/{}.asset".format(checkfile2) or obj.container == "assets/md/adventurenote/{}.asset".format(checkfile2) or obj.container == "assets/md/characterinfo/{}.asset".format(checkfile2) or obj.container == "assets/md/common/{}.asset".format(checkfile2) or obj.container == "assets/md/honeytree/{}.asset".format(checkfile2) or obj.container == "assets/md/kinomidata/{}.asset".format(checkfile2) or obj.container == "assets/md/localkoukan/{}.asset".format(checkfile2) or obj.container == "assets/md/mapwarpdata/{}.asset".format(checkfile2) or obj.container == "assets/md/msgwindowdata/{}.asset".format(checkfile2) or obj.container == "assets/md/network/{}.asset".format(checkfile2) or obj.container == "assets/md/placetagdata/{}.asset".format(checkfile2) or obj.container == "assets/md/pokemondata/{}.asset".format(checkfile2) or obj.container == "assets/md/shopdata/{}.asset".format(checkfile2)  or obj.container == "assets/md/stopdata/{}.asset".format(checkfile2) or obj.container == "assets/md/tower/{}.asset".format(checkfile2) or obj.container == "assets/md/tv/{}.asset".format(checkfile2) or obj.container == "assets/md/underground/{}.asset".format(checkfile2):
+            tree = obj.read_typetree()
+            with open('import/{}'.format(filename), "rt", encoding="utf8") as f:
+                data = json.load(f)
+            print('{} updated'.format(checkfile))
+            obj.save_typetree(data)
+
+
+with open("output/masterdatas", "wb") as t:
+    t.write(env.file.save(packer=(64, 2)))
+
 
 input('Repack complete enter any key to exit')
