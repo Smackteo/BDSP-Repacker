@@ -8,3 +8,4 @@ This tool pulls from the resources folder for a provided personal_masterdatas fi
 User must add JSONs that they want to modify to the import folder
 
 This tool outputs a backup copy of personal_masterdatas to the output as well if the user happens to import an incorrect JSON
+
