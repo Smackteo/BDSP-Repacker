@@ -1,5 +1,13 @@
 # BDSP-Repacker
-Repacker for luminescent platnium
+Repacker for BDSP Masterdatas and Personal_Masterdatas
+
+Please consider joining our discord https://discord.gg/nrZGaRdqvw
+
+Please consider Subscribing to my youtube! https://www.youtube.com/channel/UCXUlKU3oQB0fO0EHfsJKfpg
+
+Or following my twitter! https://twitter.com/smackteo
+
+
 
 This tool pulls from the resources folder for a provided personal_masterdatas & Masterdatas file then modifies the JSONs within
 

@@ -3,7 +3,7 @@ import UnityPy
 import json
 
 #Smackteo's BDSP repacker
-#2.0
+#2.1
 
 src = "Resources/personal_masterdatas"
 directory = r'import'
@@ -48,4 +48,7 @@ if os.path.exists(src):
         t.write(env.file.save(packer=(64, 2)))
 
 
+print('Please consider joining our discord https://discord.gg/nrZGaRdqvw')
+print('Please consider Subscribing to my youtube! https://www.youtube.com/channel/UCXUlKU3oQB0fO0EHfsJKfpg')
+print('Or following my twitter! https://twitter.com/smackteo')
 input('Repack complete enter any key to exit')
